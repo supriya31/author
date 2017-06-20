@@ -1,10 +1,19 @@
-<html ng-app="peasy" ng-controller="pctrl">
+<html ng-app="peasy" >
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
     peasy</title>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="clockpicker-gh-pages/dist/bootstrap-clockpicker.min.css">-->
+    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <script src="js/time.js"></script>
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+
 
     <link rel="stylesheet" href="css/peasy.css" />
     <link rel="icon" href="img/site.ico" />
@@ -15,10 +24,8 @@
     
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-         <!--<script src="clockpicker-gh-pages/assets/js/bootstrap.min.js"></script>
-    <script src="clockpicker-gh-pages/assets/js/highlight.min.js"></script>
-    <script src="clockpicker-gh-pages/dist/jquery-clockpicker.min.js"></script>-->
-        <script src="js/peasy.js"></script>
+
+       <!-- <script src="js/peasy.js"></script>-->
         <div class="header" align="center"><h1>Author a Test</h1></div>
         <div class="container">
         <div class="row">
@@ -28,7 +35,7 @@
             </div>
         </div>
         <br>
-       
+       <br>
       <div class="container">
         <div class="row">
             <div class="col-md-2">Company:</div>
@@ -38,12 +45,15 @@
   <option value="INFOSYS">INFOSYS</option>
   <option value="AMAZON">AMAZON</option>
   <option value="TCS">TCS</option>
-  <option value="MICROSOFT">MICROSOFT</option>
+  <option value="GOOGLE">GOOGLE</option>
+            <option value="MICROSOFT">MICROSOFT</option>
+            <option value="ACCENTURE">ACCENTURE</option>
+            <option value="HCL">HCL</option>
 </select>
         </div>
         </div>
 <br>
-        
+        <br>
      <div class="container">
         <div class="row">
             <div class="col-md-2">Questions</div> <div class="col-md-10"><input type="text" ng-model="number" placeholder="enter no.of questions">
@@ -54,7 +64,7 @@
         
         <div class="container">
         <div class="row">
-            <h3> INSTRUCTIONS</h3></div>
+            <h5> INSTRUCTIONS</h5></div>
             <div class="row">
             <ul>
                 <li>
@@ -65,7 +75,57 @@
                 Candidate can chnage answer till the end of time.</li></ul></div>
         </div>
         
-        <br>     
+        <br> 
+          <br>
+          <div ng-controller="TimepickerDemoCtrl">
+    <div class="container">
+    <div class="row">
+        <div class="col-md-2">
+        Start Time:</div>
+        <div class="col-md-10">
+
+  <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+            
+                                                                                                                              </div></div></div>
+
+  
+  
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info" ng-click="toggleMode()">12H / 24H</button></div>
+  <!--<button type="button" class="btn btn-default" ng-click="update()">Set to 14:00</button>-->
+        <div class="col-md-9"><button type="button" class="btn btn-danger" ng-click="clear()">Clear</button></div>
+    </div>
+    </div>
+      </div>
+        </div><br><br>
+    
+    <div ng-controller="TimepickerDemo">
+    
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+        End Time:</div>
+        <div class="col-md-10">
+
+  <div uib-timepicker ng-model="mytime" ng-change="changed()" hour-step="hstep" minute-step="mstep" show-meridian="ismeridian"></div>
+            
+                                                                                                                              </div></div></div>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-info" ng-click="toggleMode()">12H / 24H</button></div>
+  <!--<button type="button" class="btn btn-default" ng-click="update()">Set to 14:00</button>-->
+        <div class="col-md-9"><button type="button" class="btn btn-danger" ng-click="clear()">Clear</button></div>
+    </div>
+    </div>
+</div>
+        
+          
+          
+          <br><br>
              <div class="container">
                  <div class="btn-group btn-group-justified">
     <a href="#" class="btn btn-primary">Add Question</a>
